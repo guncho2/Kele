@@ -17,4 +17,13 @@ class Kele
      puts "Login invalid"
    end
 end
+
+def get_me
+    response = Kele.get("https://private-amnesiac-822888-blocapi.apiary-proxy.com/api/v1/users/me",
+      headers: { "authorization" => @auth_token }
+    )
+    @user_info = JSON.parse(response.body)
+  end
+
+
 end
