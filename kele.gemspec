@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
    s.summary       = 'Kele API Client'
    s.description   = 'A client for the Bloc API'
    s.authors       = ['Eduardo Lowensohn']
-   s.email         = 'antblessing@gmail.com'
+   s.email         = 'gunchosoft@gmail.com'
    s.files         = s.files = ['lib/kele.rb']
    s.require_paths = ["lib"]
    s.homepage      =
