@@ -15,11 +15,13 @@ class Kele
 end
 
 def get_me
-    response = self.class.post("#{BASE_URI}/users/me",
+    response = self.class.get("#{BASE_URI}/users/me",
       headers: { "authorization" => @auth_token }
     )
     JSON.parse(response.body)
   end
+
+  
 
 
 end
