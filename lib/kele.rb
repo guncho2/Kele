@@ -9,12 +9,8 @@ class Kele
 
 
     def initialize(email, password)
-        response = self.class.post("https://private-amnesiac-822888-blocapi.apiary-proxy.com/api/v1/sessions", body: { 'email': email, 'password': password })
-        if response && response["auth_token"]
-     @auth_token = response['auth_token']
-     puts "#{email} is sucessfully in with auth_token #{@auth_token}"
-   else
-     puts "Login invalid"
-   end
+        response = self.class.post("#{BASE_URI}/sessions", body: { 'email': email, 'password': password })
+        raise 'Invalid email or password' if response.code == 404
+    @auth_token = response["auth_token"]
 end
 end
