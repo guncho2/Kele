@@ -18,7 +18,7 @@ def get_me
     response = self.class.post("#{BASE_URI}/users/me",
       headers: { "authorization" => @auth_token }
     )
-    @user_info = JSON.parse(response.body)
+    JSON.parse(response.body)
   end
 
 
