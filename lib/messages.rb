@@ -30,9 +30,14 @@ module Messages
       "stripped-text" => text
 
     })
-    # puts "Your messages was sent!" if response.success?
 
-    response
+  # puts "Your messages was sent!" if response.success?  : "ERROR: Message Not Sent!"
+
+  response.success? ? "Your messages was sent!" : "ERROR: Message Not Sent!"
+
+  
+
+
 
   end
 end
