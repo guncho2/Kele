@@ -8,7 +8,7 @@ module Messages
 
 
   def get_messages(page_number = 1)
-    response = self.class.get("#{BASE_URI}/message_threads", headers: { "authroization" => @auth_token },
+    response = self.class.get("#{BASE_URI}/message_threads", headers: { "authorization" => @auth_token },
     body: {
       "page": page_number
 
@@ -30,7 +30,9 @@ module Messages
       "stripped-text" => text
 
     })
-    puts "Your messages was sent!" if response.success?
+    # puts "Your messages was sent!" if response.success?
+
+    response
 
   end
 end
