@@ -1,5 +1,5 @@
 require 'httparty'
-require 'jason'
+require 'json'
 
 module Messages
   include HTTParty
@@ -8,9 +8,9 @@ module Messages
 
 
   def get_messages(page_number = 1)
-    response = self.class.get("#{BASE_URI}/message_threads"), headers: { "authroization" => @auth_token },
+    response = self.class.get("#{BASE_URI}/message_threads", headers: { "authroization" => @auth_token },
     body: {
-      "page" = page_number
+      "page": page_number
 
     })
 
@@ -20,8 +20,8 @@ module Messages
 
   end
 
-  def create_message(sender, recipient_id, token, subject, stripped-text)
-    response = self.class.post("#{BASE_URI}/messages"), headers: { "authorization" => @auth_token },
+  def create_message(sender, recipient_id, token, subject, text)
+    response = self.class.post("#{BASE_URI}/messages", headers: { "authorization" => @auth_token },
     body: {
       "sender" => sender,
       "recipient_id" => recipient_id,
